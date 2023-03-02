@@ -11,6 +11,7 @@
 		AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D529AFA1B10098A5E6 /* ContentView.swift */; };
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
+		AC3321FC29B001110098A5E6 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321FB29B001110098A5E6 /* ResourceList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AC3321D529AFA1B10098A5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC3321D729AFA1B30098A5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC3321FB29B001110098A5E6 /* ResourceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
+				AC3321FB29B001110098A5E6 /* ResourceList.swift */,
 				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
 				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
 				AC3321D929AFA1B30098A5E6 /* Preview Content */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
+				AC3321FC29B001110098A5E6 /* ResourceList.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
