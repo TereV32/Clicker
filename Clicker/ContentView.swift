@@ -7,14 +7,11 @@
 
 import SwiftUI
 import SpriteKit
-import EffectsLibrary
 
 struct ContentView: View {
     
     @State public var count = 0
     @State private var button1Count = 0
-    @State private var button2Count = 0
-    @State private var button3Count = 0
     
     let rainEmitter = SKEmitterNode(fileNamed: "Rain.sks")!
 
@@ -32,10 +29,18 @@ struct ContentView: View {
 //                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
 //
             VStack {
+                
+                Text("Rain Total: \(count)")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding(4)
+                Text("Rain Drops/s: ")
+                    .font(.headline) //Add raindrops per second
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.center)
                 Spacer()
-                
-                Text("Total # of clicks: \(count)")
-                
+                Spacer()
                 Spacer()
                 
                 HStack {
@@ -43,14 +48,18 @@ struct ContentView: View {
                         button1Count += 1
                         count += 1
                     } label: {
-                        Text("Button 1")
+                        Text("Make it Rain Bitch!")
+                            .padding(20)
+                            .background(.blue)
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .clipShape(Capsule())
+                            
                     }
-                    Text("Button 1: \(button1Count)")
+                    
+                    
                 }
-                Spacer()
             }
-//        }
-        .padding()
     }
 //    func createResourceLabel(_ resource: String, _ resourceAction: String) -> some View {
 //        HStack {
