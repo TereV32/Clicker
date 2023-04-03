@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC2CE49729D3911E0076C701 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = AC2CE49629D3911E0076C701 /* Rain.sks */; };
-		AC2CE49D29D393FF0076C701 /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2CE49C29D393FF0076C701 /* RainScene.swift */; };
 		AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */; };
 		AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D529AFA1B10098A5E6 /* ContentView.swift */; };
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
-		AC3321FC29B001110098A5E6 /* ResourceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321FB29B001110098A5E6 /* ResourceList.swift */; };
+		AC72A21229D6702E001A81ED /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72A21129D6702E001A81ED /* RainView.swift */; };
+		AC931C2F29DB4F75001E1EBD /* RainDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC931C2E29DB4F75001E1EBD /* RainDrop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC2CE49629D3911E0076C701 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
-		AC2CE49C29D393FF0076C701 /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
 		AC3321D029AFA1B10098A5E6 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
 		AC3321D529AFA1B10098A5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC3321D729AFA1B30098A5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AC3321FB29B001110098A5E6 /* ResourceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceList.swift; sourceTree = "<group>"; };
+		AC72A21129D6702E001A81ED /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
+		AC931C2E29DB4F75001E1EBD /* RainDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDrop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +55,9 @@
 		AC3321D229AFA1B10098A5E6 /* Clicker */ = {
 			isa = PBXGroup;
 			children = (
+				AC72A21329D670C9001A81ED /* Rain */,
 				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
-				AC2CE49629D3911E0076C701 /* Rain.sks */,
-				AC3321FB29B001110098A5E6 /* ResourceList.swift */,
 				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
-				AC2CE49C29D393FF0076C701 /* RainScene.swift */,
 				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
 				AC3321D929AFA1B30098A5E6 /* Preview Content */,
 			);
@@ -74,6 +70,15 @@
 				AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC72A21329D670C9001A81ED /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				AC72A21129D6702E001A81ED /* RainView.swift */,
+				AC931C2E29DB4F75001E1EBD /* RainDrop.swift */,
+			);
+			path = Rain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +143,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2CE49729D3911E0076C701 /* Rain.sks in Resources */,
 				AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */,
 				AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */,
 			);
@@ -151,9 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC931C2F29DB4F75001E1EBD /* RainDrop.swift in Sources */,
+				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
-				AC3321FC29B001110098A5E6 /* ResourceList.swift in Sources */,
-				AC2CE49D29D393FF0076C701 /* RainScene.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
