@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */; };
+		4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */; };
 		AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */; };
 		AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D529AFA1B10098A5E6 /* ContentView.swift */; };
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
 		AC72A21229D6702E001A81ED /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72A21129D6702E001A81ED /* RainView.swift */; };
-		AC931C2F29DB4F75001E1EBD /* RainDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC931C2E29DB4F75001E1EBD /* RainDrop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointGenerator.swift; sourceTree = "<group>"; };
+		4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		AC3321D029AFA1B10098A5E6 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
 		AC3321D529AFA1B10098A5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC3321D729AFA1B30098A5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC72A21129D6702E001A81ED /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
-		AC931C2E29DB4F75001E1EBD /* RainDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDrop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3FD1B229DCBFA700EF4BA8 /* Generators  */ = {
+			isa = PBXGroup;
+			children = (
+				4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */,
+				4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */,
+			);
+			path = "Generators ";
+			sourceTree = "<group>";
+		};
 		AC3321C729AFA1B10098A5E6 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +70,7 @@
 				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
 				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
 				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
+				4E3FD1B229DCBFA700EF4BA8 /* Generators  */,
 				AC3321D929AFA1B30098A5E6 /* Preview Content */,
 			);
 			path = Clicker;
@@ -76,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				AC72A21129D6702E001A81ED /* RainView.swift */,
-				AC931C2E29DB4F75001E1EBD /* RainDrop.swift */,
 			);
 			path = Rain;
 			sourceTree = "<group>";
@@ -155,8 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC931C2F29DB4F75001E1EBD /* RainDrop.swift in Sources */,
+				4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */,
 				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
+				4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */,
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
 			);
@@ -287,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Clicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 3WC267267S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -315,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Clicker/Preview Content\"";
+				DEVELOPMENT_TEAM = 3WC267267S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

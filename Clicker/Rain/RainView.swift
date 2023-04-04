@@ -8,70 +8,71 @@
 import SwiftUI
 
 struct RainView: View {
-    
-    @State public var count = 0
-    @State private var button1Count = 0
-    @State public var rainPerSecond = 0
-    
-    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @ObservedObject var gameState = GameState()
     
     var body: some View {
-        ZStack {
+        // Displays Rain drops and Rain Drops/s
+        VStack() {
+            Text("\(gameState.count) rain drop")
+                .font(.largeTitle)
             
-            VStack {
-                Text("Raindrops: \(count)")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .padding(4)
-                Text("\(rainPerSecond)/s: ")
-                    .font(.headline) //Add raindrops per second
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                Spacer()
-                Spacer()
-                Spacer()
-                
-                if count >= 10 {
-                    VStack {
-                        HStack {
-                            Button {
-                                rainPerSecond = 1
-                            } label: {
-                                Text("Auto Rain")
-                                    .padding(20)
-                                    .background(.blue)
-                                    .foregroundColor(.white)
-                                    .font(.title)
-                                    .clipShape(Capsule())
-                            }
-                        }
-                    }
-                }
-                
+            if gameState.rainPerSecond > 0 {
+                Text("\(gameState.rainPerSecond) rain drop/s")
+                    .font(.title2)
+            }
+            Spacer()
+            Spacer()
+            // Declares the list of the rain generators
+            List(gameState.rainGenerators) { rainGenerator in
                 HStack {
-                    Button {
-                        button1Count += 1
-                        count += 1
-                    } label: {
-                        Text("Make it Rain Bitch!")
-                            .padding(20)
-                            .background(.blue)
-                            .foregroundColor(.white)
-                            .font(.title)
-                            .clipShape(Capsule())
-                        
+                    VStack(alignment: .leading) {
+                        Text(rainGenerator.name)
+                        Text("\(rainGenerator.rainPerSecond) rain/s")
+                        Text("Price: \(rainGenerator.price) raindrops")
                     }
+                    Spacer()
+                    // Groups the Generators to be purchased
+                    Group {
+                        
+                        Button(action: {
+                            self.gameState.purchase(rainGenerator: rainGenerator)
+                        }) {
+                            Text("Purchase")
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                        .disabled(self.gameState.count < rainGenerator.price)
+                    }
+                    
                 }
-            }.onReceive(timer, perform: { _ in
-                count = count + rainPerSecond
-            })
+
+            }
+            // Styling the List for the Generators
+            .listStyle(.plain)
+            .padding()
+            
+            
+            // Make it Rain Button
+            Button(action: {
+                self.gameState.click()
+            }) {
+                Text("Make it Rain!")
+                    .font(.largeTitle)
+            }
+            // Styling the buttons. 
+            .padding(10)
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(20)
+            
+            
         }
+    
     }
 }
 
-struct RainView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        RainView()
+        ContentView()
     }
 }
+
