@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var gameState = GameState()
     
     var body: some View {
         TabView {
-            RainView()
+            RainView(gameState: gameState)
                 .tabItem {
                     Label("Rain", systemImage: "moonphase.full.moon")
                 }
             
-            GrassView()
+            GrassView(gameState: gameState)
                 .tabItem {
                     Label("Grass", systemImage: "moonphase.full.moon")
+                }
+            MenuView(gameState: gameState)
+                .tabItem{
+                    Label("Menu" , systemImage: "moonphase.full.moon")
                 }
         }
     }

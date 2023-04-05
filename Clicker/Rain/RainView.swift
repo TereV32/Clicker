@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RainView: View {
-    @ObservedObject var gameState = GameState()
+    @ObservedObject var gameState : GameState 
     @State private var showingSheet = false
     
     
@@ -33,7 +33,7 @@ struct RainView: View {
                 
                 
                 
-                //Declares the list of the rain generators
+                /*Declares the list of the rain generators
                 List(gameState.rainGenerators) { rainGenerator in
                     HStack {
                         VStack(alignment: .leading) {
@@ -59,7 +59,7 @@ struct RainView: View {
                 }
                 // Styling the List for the Generators
                 .listStyle(.plain)
-                .padding()
+                .padding() */
                 
                 
                 
@@ -76,15 +76,6 @@ struct RainView: View {
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(20)
-                
-                Button("Show Sheet") {
-                            showingSheet.toggle()
-                        }
-                        .sheet(isPresented: $showingSheet) {
-                            MenuView()
-                        }
-                
-                
             }
         }
     }
@@ -92,7 +83,9 @@ struct RainView: View {
 
 struct RainView_Previews: PreviewProvider {
     static var previews: some View {
-        RainView()
+        
+    @ObservedObject var gameState = GameState()
+        RainView(gameState: gameState)
     }
 }
 
