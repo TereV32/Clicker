@@ -14,7 +14,7 @@ struct GrassView: View {
         ZStack {
             // Makes it rain the amount of raindropsPerSecond in the game
             if gameState.grassCount > 0 {
-//                randomGrassView(grassCount: $gameState.grassCount)
+                randomGrassView(grassCount: $gameState.grassCount)
             }
             
             VStack() {

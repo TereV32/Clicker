@@ -30,14 +30,12 @@ struct Grassblades: View {
 }
 
 struct randomGrassView: View {
-//    @Binding var grassCount: Int
+    @Binding var grassCount: Int
     
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-//                ForEach(0..<grassCount) { _ in
-                ForEach(0..<100) { _ in
-
+                ForEach(0..<grassCount) { _ in
                     Grassblades()
                         .frame(width: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
                         .offset(x: CGFloat.random(in: 0...geometry.size.width), y: CGFloat.random(in: 0...geometry.size.height))
@@ -55,6 +53,5 @@ struct randomGrassView: View {
 struct Grassblades_Previews: PreviewProvider {
     static var previews: some View {
         Grassblades()
-        randomGrassView()
     }
 }
