@@ -38,7 +38,7 @@ struct RainDropView: View {
             ZStack {
                 ForEach(Array(0..<rainPerSecond), id: \.self) { _ in
                     RainDrop()
-                        .frame(width: 2, height: 60)
+                        .frame(width: 150, height: 60)
                         .offset(x: CGFloat.random(in: 0...geometry.size.width))
                 }
             }

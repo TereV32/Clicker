@@ -11,13 +11,17 @@ class GameState : ObservableObject {
     // Declares the Variables
     @Published var count = 0
     @Published var rainPerSecond = 0
+    
+    @Published var grassCount = 0
+    @Published var priceOfGrass = 1000;
+    
     //Creates the rain generators
     @Published var rainGenerators: [ RainGenerator ] = [
-        RainGenerator(name: "Rain Generator #1", rainPerSecond: 1, price: 10),
+        RainGenerator(name: "Rain Generator #1", rainPerSecond: 10, price: 10),
         RainGenerator(name: "Rain Generator #2", rainPerSecond: 2, price: 50),
         RainGenerator(name: "Rain Generator #3", rainPerSecond: 5, price: 150),
         RainGenerator(name: "Rain Generator #4", rainPerSecond: 10, price: 400)]
-
+    
     //Declares the Timer
     var timer: Timer?
     
@@ -48,4 +52,11 @@ class GameState : ObservableObject {
         self.count += self.rainPerSecond
     }
     
+    // Function that creates grass    
+    func purchaseGrass() {
+        if priceOfGrass <= count {
+            self.count -= priceOfGrass
+            self.grassCount += 1
+        }
+    }
 }

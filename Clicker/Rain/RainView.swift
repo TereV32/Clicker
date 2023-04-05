@@ -50,7 +50,7 @@ struct RainView: View {
                         }
                         
                     }
-                    
+                    .listRowBackground(Color.clear)
                 }
                 // Styling the List for the Generators
                 .listStyle(.plain)
@@ -76,9 +76,9 @@ struct RainView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RainView()
     }
 }
 
