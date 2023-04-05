@@ -47,4 +47,5 @@ class GameState : ObservableObject {
     func tick() {
         self.count += self.rainPerSecond
     }
+    
 }

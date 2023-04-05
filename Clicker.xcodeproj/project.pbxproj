@@ -14,6 +14,7 @@
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
 		AC72A21229D6702E001A81ED /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72A21129D6702E001A81ED /* RainView.swift */; };
+		ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AC3321D729AFA1B30098A5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC72A21129D6702E001A81ED /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
+		ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDrop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				AC72A21129D6702E001A81ED /* RainView.swift */,
+				ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */,
 			);
 			path = Rain;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */,
 				4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */,
 				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
 				4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */,

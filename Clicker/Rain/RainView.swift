@@ -11,62 +11,68 @@ struct RainView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
-        // Displays Rain drops and Rain Drops/s
-        VStack() {
-            Text("\(gameState.count) rain drop")
-                .font(.largeTitle)
-            
+        ZStack {
+            // Makes it rain the amount of raindropsPerSecond in the game
             if gameState.rainPerSecond > 0 {
-                Text("\(gameState.rainPerSecond) rain drop/s")
-                    .font(.title2)
+                RainDropView(rainPerSecond: $gameState.rainPerSecond)
             }
-            Spacer()
-            Spacer()
-            // Declares the list of the rain generators
-            List(gameState.rainGenerators) { rainGenerator in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(rainGenerator.name)
-                        Text("\(rainGenerator.rainPerSecond) rain/s")
-                        Text("Price: \(rainGenerator.price) raindrops")
-                    }
-                    Spacer()
-                    // Groups the Generators to be purchased
-                    Group {
-                        
-                        Button(action: {
-                            self.gameState.purchase(rainGenerator: rainGenerator)
-                        }) {
-                            Text("Purchase")
+            
+            VStack() {
+                // Displays Rain drops and Rain Drops/s
+                Text("\(gameState.count) rain drop")
+                    .font(.largeTitle)
+                
+                if gameState.rainPerSecond > 0 {
+                    Text("\(gameState.rainPerSecond) rain drop/s")
+                        .font(.title2)
+                }
+                Spacer()
+                Spacer()
+                // Declares the list of the rain generators
+                List(gameState.rainGenerators) { rainGenerator in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(rainGenerator.name)
+                            Text("\(rainGenerator.rainPerSecond) rain/s")
+                            Text("Price: \(rainGenerator.price) raindrops")
                         }
-                        .buttonStyle(BorderlessButtonStyle())
-                        .disabled(self.gameState.count < rainGenerator.price)
+                        Spacer()
+                        // Groups the Generators to be purchased
+                        Group {
+                            
+                            Button(action: {
+                                self.gameState.purchase(rainGenerator: rainGenerator)
+                            }) {
+                                Text("Purchase")
+                            }
+                            .buttonStyle(BorderlessButtonStyle())
+                            .disabled(self.gameState.count < rainGenerator.price)
+                        }
+                        
                     }
                     
                 }
-
+                // Styling the List for the Generators
+                .listStyle(.plain)
+                .padding()
+                
+                
+                // Make it Rain Button
+                Button(action: {
+                    self.gameState.click()
+                }) {
+                    Text("Make it Rain!")
+                        .font(.largeTitle)
+                }
+                // Styling the buttons.
+                .padding(10)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+                
+                
             }
-            // Styling the List for the Generators
-            .listStyle(.plain)
-            .padding()
-            
-            
-            // Make it Rain Button
-            Button(action: {
-                self.gameState.click()
-            }) {
-                Text("Make it Rain!")
-                    .font(.largeTitle)
-            }
-            // Styling the buttons. 
-            .padding(10)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(20)
-            
-            
         }
-    
     }
 }
 
