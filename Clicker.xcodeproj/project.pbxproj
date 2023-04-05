@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0C49BD29DDF92F002ECF83 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C49BC29DDF92F002ECF83 /* MenuView.swift */; };
 		4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */; };
 		4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */; };
 		AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E0C49BC29DDF92F002ECF83 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointGenerator.swift; sourceTree = "<group>"; };
 		4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		AC3321D029AFA1B10098A5E6 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 				ACAA1B7629DD00DB00DCB3A1 /* Grass */,
 				AC72A21329D670C9001A81ED /* Rain */,
 				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
+				4E0C49BC29DDF92F002ECF83 /* MenuView.swift */,
 				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
 				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
 				4E3FD1B229DCBFA700EF4BA8 /* Generators  */,
@@ -187,6 +190,7 @@
 				ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */,
 				4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */,
 				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
+				4E0C49BD29DDF92F002ECF83 /* MenuView.swift in Sources */,
 				4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */,
 				ACAA1B7A29DD028900DCB3A1 /* GrassView.swift in Sources */,
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
