@@ -15,10 +15,10 @@ struct RainGenerator : Identifiable {
     var price: Int
 }
 
-// Declare variables for Grass Generators
-struct GrassGenerator : Identifiable {
+// Declare variables for Lightning Generators
+struct LightningGenerator : Identifiable {
     var id = UUID()
     var name: String
-    var grass: Int
+    var lightning: Int
     var price: Int
 }

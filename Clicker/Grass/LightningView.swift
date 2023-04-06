@@ -1,5 +1,5 @@
 //
-//  GrassView.swift
+//  LigthningView.swift
 //  Clicker
 //
 //  Created by Teresa Villegas on 4/4/23.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct GrassView: View {
+struct LightningView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
         ZStack {
             // Makes it rain the amount of raindropsPerSecond in the game
-            if gameState.grassCount > 0 {
-                randomGrassView(grassCount: $gameState.grassCount)
+            if gameState.lightningCount > 0 {
+                randomLightningView(lightningCount: $gameState.lightningCount)
             }
             
             VStack() {
@@ -32,7 +32,7 @@ struct GrassView: View {
                     }
                     Spacer()
                     
-                    Text("\(gameState.grassCount) grassblades")
+                    Text("\(gameState.lightningCount) lightning strikes")
                         .font(.callout)
                     
                     Spacer()
@@ -40,12 +40,12 @@ struct GrassView: View {
                 Spacer()
                 Spacer()
                 
-                // Get Grassblade Button
+                // Get lightning Button
                 Button(action: {
-                    self.gameState.purchaseGrass()
+                    self.gameState.purchaseLightning()
                 }) {
                     VStack(alignment: .center) {
-                        Text("Grow grass")
+                        Image(systemName: "cloud.bolt.fill")
                             .font(.title)
                         Text("Price: 1,000 Raindrops")
                             .font(.caption2)
@@ -62,8 +62,8 @@ struct GrassView: View {
     }
 }
 
-struct GrassView_Previews: PreviewProvider {
+struct LightningView_Previews: PreviewProvider {
     static var previews: some View {
-        GrassView()
+        LightningView()
     }
 }

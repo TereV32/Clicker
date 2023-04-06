@@ -12,8 +12,8 @@ class GameState : ObservableObject {
     @Published var count = 0
     @Published var rainPerSecond = 0
     
-    @Published var grassCount = 0
-    @Published var priceOfGrass = 1000;
+    @Published var lightningCount = 0
+    @Published var priceOfLightning = 1000;
     
     //Creates the rain generators
     @Published var rainGenerators: [ RainGenerator ] = [
@@ -52,11 +52,11 @@ class GameState : ObservableObject {
         self.count += self.rainPerSecond
     }
     
-    // Function that creates grass    
-    func purchaseGrass() {
-        if priceOfGrass <= count {
-            self.count -= priceOfGrass
-            self.grassCount += 1
+    // Function that creates lightning
+    func purchaseLightning() {
+        if priceOfLightning <= count {
+            self.count -= priceOfLightning
+            self.lightningCount += 1
         }
     }
 }

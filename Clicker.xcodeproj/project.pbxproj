@@ -16,8 +16,8 @@
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
 		AC72A21229D6702E001A81ED /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72A21129D6702E001A81ED /* RainView.swift */; };
 		ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */; };
-		ACAA1B7829DD00F600DCB3A1 /* Grassblades.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */; };
-		ACAA1B7A29DD028900DCB3A1 /* GrassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7929DD028900DCB3A1 /* GrassView.swift */; };
+		ACAA1B7829DD00F600DCB3A1 /* LightningStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7729DD00F600DCB3A1 /* LightningStrike.swift */; };
+		ACAA1B7A29DD028900DCB3A1 /* LightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7929DD028900DCB3A1 /* LightningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC72A21129D6702E001A81ED /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
 		ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDrop.swift; sourceTree = "<group>"; };
-		ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grassblades.swift; sourceTree = "<group>"; };
-		ACAA1B7929DD028900DCB3A1 /* GrassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassView.swift; sourceTree = "<group>"; };
+		ACAA1B7729DD00F600DCB3A1 /* LightningStrike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningStrike.swift; sourceTree = "<group>"; };
+		ACAA1B7929DD028900DCB3A1 /* LightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +106,8 @@
 		ACAA1B7629DD00DB00DCB3A1 /* Grass */ = {
 			isa = PBXGroup;
 			children = (
-				ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */,
-				ACAA1B7929DD028900DCB3A1 /* GrassView.swift */,
+				ACAA1B7729DD00F600DCB3A1 /* LightningStrike.swift */,
+				ACAA1B7929DD028900DCB3A1 /* LightningView.swift */,
 			);
 			path = Grass;
 			sourceTree = "<group>";
@@ -186,13 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACAA1B7829DD00F600DCB3A1 /* Grassblades.swift in Sources */,
+				ACAA1B7829DD00F600DCB3A1 /* LightningStrike.swift in Sources */,
 				ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */,
 				4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */,
 				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
 				4E0C49BD29DDF92F002ECF83 /* MenuView.swift in Sources */,
 				4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */,
-				ACAA1B7A29DD028900DCB3A1 /* GrassView.swift in Sources */,
+				ACAA1B7A29DD028900DCB3A1 /* LightningView.swift in Sources */,
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
 			);
@@ -326,6 +326,7 @@
 				DEVELOPMENT_TEAM = 3WC267267S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ClickStorm;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -355,6 +356,7 @@
 				DEVELOPMENT_TEAM = 3WC267267S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ClickStorm;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

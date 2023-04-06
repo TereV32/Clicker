@@ -21,7 +21,7 @@ struct RainDrop: View {
             Image("raindrop")
                 .opacity(opacity)
                 .offset(y: isAnimating ? UIScreen.main.bounds.height - yPosition : -200)
-                .animation(Animation.easeInOut(duration: Double.random(in: 2...6)).repeatForever(autoreverses: false), value: isAnimating)
+                .animation(Animation.easeInOut(duration: Double.random(in: 0.75...2)).repeatForever(autoreverses: false), value: isAnimating)
                 .onAppear() {
                     self.isAnimating = true
                 }

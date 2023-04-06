@@ -14,17 +14,21 @@ struct ContentView: View {
         TabView {
             RainView(gameState: gameState)
                 .tabItem {
-                    Label("Rain", systemImage: "moonphase.full.moon")
+                    Label("Rain", systemImage: "cloud.drizzle.fill")
                 }
+                .padding()
             
-            GrassView(gameState: gameState)
+            LightningView(gameState: gameState)
                 .tabItem {
-                    Label("Grass", systemImage: "moonphase.full.moon")
+                    Label("Lightning", systemImage: "cloud.bolt.fill")
                 }
+                .padding()
+            
             MenuView(gameState: gameState)
                 .tabItem{
-                    Label("Menu" , systemImage: "moonphase.full.moon")
+                    Label("Menu" , systemImage: "gearshape")
                 }
+                .padding()
         }
     }
 }

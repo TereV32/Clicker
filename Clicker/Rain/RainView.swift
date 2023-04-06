@@ -19,6 +19,10 @@ struct RainView: View {
                 RainDropView(rainPerSecond: $gameState.rainPerSecond)
             }
             
+            if gameState.lightningCount > 0 {
+                randomLightningView(lightningCount: $gameState.lightningCount)
+            }
+            
             VStack() {
                 // Displays Rain drops and Rain Drops/s
                 Text("\(gameState.count) rain drop")
@@ -68,11 +72,13 @@ struct RainView: View {
                 Button(action: {
                     self.gameState.click()
                 }) {
-                    Text("Make it Rain!")
-                        .font(.largeTitle)
+                    Image(systemName: "cloud.rain")
+//                    Text("Make it Rain!")
+//                        .font(.largeTitle)
                 }
                 // Styling the buttons.
                 .padding(10)
+                .frame(width: 100)
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(20)
