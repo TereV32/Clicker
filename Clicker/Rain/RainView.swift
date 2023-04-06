@@ -25,11 +25,11 @@ struct RainView: View {
             
             VStack() {
                 // Displays Rain drops and Rain Drops/s
-                Text("\(gameState.count) rain drop")
+                Text("\(gameState.count) Rain Drop")
                     .font(.largeTitle)
                 // Displays raindrops/s once user buys a cloud
                 if gameState.rainPerSecond > 0 {
-                    Text("\(gameState.rainPerSecond) rain drop/s")
+                    Text("\(gameState.rainPerSecond) Rain Drop/s")
                         .font(.title2)
                 }
                 Spacer()
@@ -73,7 +73,7 @@ struct RainView: View {
                 }
                 // Styling the buttons.
                 .padding(10)
-                .frame(width: 100)
+                .frame(width: 150)
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(20)

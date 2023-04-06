@@ -9,19 +9,19 @@ import Foundation
 
 class GameState : ObservableObject {
     // Declares the Variables
-    // Published prop allows other views to react to changes
+    // Published prop. allows other views to react to changes
     @Published var count = 0
     @Published var rainPerSecond = 0
     
     @Published var lightningCount = 0
     @Published var priceOfLightning = 1000;
     
-    //Creates the rain generators with an array that initialized the values below
+    //Creates the rain generators with an arrays that initialized the values below
     @Published var rainGenerators: [ RainGenerator ] = [
-        RainGenerator(name: "Rain Generator #1", rainPerSecond: 10, price: 10),
-        RainGenerator(name: "Rain Generator #2", rainPerSecond: 2, price: 50),
-        RainGenerator(name: "Rain Generator #3", rainPerSecond: 5, price: 150),
-        RainGenerator(name: "Rain Generator #4", rainPerSecond: 10, price: 400)]
+        RainGenerator(name: "Rain Cloud #1", rainPerSecond: 10, price: 10),
+        RainGenerator(name: "Rain Cloud #2", rainPerSecond: 2, price: 50),
+        RainGenerator(name: "Rain Cloud #3", rainPerSecond: 5, price: 150),
+        RainGenerator(name: "Rain Cloud #4", rainPerSecond: 10, price: 400)]
     
     //Declares the Timer with nil
     var timer: Timer?
