@@ -27,16 +27,13 @@ struct RainView: View {
                 // Displays Rain drops and Rain Drops/s
                 Text("\(gameState.count) rain drop")
                     .font(.largeTitle)
-                
+                // Displays raindrops/s once user buys a cloud
                 if gameState.rainPerSecond > 0 {
                     Text("\(gameState.rainPerSecond) rain drop/s")
                         .font(.title2)
                 }
                 Spacer()
                 Spacer()
-                
-                
-                
                 /*Declares the list of the rain generators
                 List(gameState.rainGenerators) { rainGenerator in
                     HStack {
@@ -66,15 +63,13 @@ struct RainView: View {
                 .padding() */
                 
                 
-                
-                
                 // Make it Rain Button
                 Button(action: {
                     self.gameState.click()
                 }) {
                     Image(systemName: "cloud.rain")
-//                    Text("Make it Rain!")
-//                        .font(.largeTitle)
+                    //Text("Make it Rain!")
+                      //.font(.largeTitle)
                 }
                 // Styling the buttons.
                 .padding(10)

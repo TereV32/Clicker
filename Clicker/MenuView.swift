@@ -15,22 +15,21 @@ struct MenuView: View {
         //Button("Press to Dismiss") {
         //dismiss()
         ZStack {
-            // Makes it rain the amount of raindropsPerSecond in the game
+            /* Makes it rain the amount of raindropsPerSecond in the game
             if gameState.rainPerSecond > 0 {
                 RainDropView(rainPerSecond: $gameState.rainPerSecond)
-            }
+            } */
             
             VStack() {
                 // Displays Rain drops and Rain Drops/s
-                Text("\(gameState.count) rain drop")
+                Text("\(gameState.count) Rain Drops")
                     .font(.largeTitle)
                 
                 if gameState.rainPerSecond > 0 {
-                    Text("\(gameState.rainPerSecond) rain drop/s")
+                    Text("\(gameState.rainPerSecond) Rain Drop/s")
                         .font(.title2)
                 }
-                
-                // Declares the list of the rain generators
+                // Declares the list of the rain generators/vlouds
                 List(gameState.rainGenerators) { rainGenerator in
                     HStack {
                         VStack(alignment: .leading) {
@@ -41,7 +40,6 @@ struct MenuView: View {
                         Spacer()
                         // Groups the Generators to be purchased
                         Group {
-                            
                             Button(action: {
                                 self.gameState.purchase(rainGenerator: rainGenerator)
                             }) {
@@ -52,6 +50,7 @@ struct MenuView: View {
                         }
                         
                     }
+                    //Makes the list translucent. 
                     .listRowBackground(Color.clear)
                 }
                 // Styling the List for the Generators
