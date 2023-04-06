@@ -11,25 +11,34 @@ struct ContentView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
-        TabView {
-            RainView(gameState: gameState)
-                .tabItem {
-                    Label("Rain", systemImage: "cloud.drizzle.fill")
-                }
-                .padding()
+        ZStack {
+            Color("Color")
+                .edgesIgnoringSafeArea(.all)
             
-            LightningView(gameState: gameState)
-                .tabItem {
-                    Label("Lightning", systemImage: "cloud.bolt.fill")
-                }
-                .padding()
+            TabView {
+                
+                RainView(gameState: gameState)
+                    .tabItem {
+                        Label("Rain", systemImage: "cloud.drizzle.fill")
+                    }
+                    .padding()
+                
+                LightningView(gameState: gameState)
+                    .tabItem {
+                        Label("Lightning", systemImage: "cloud.bolt.fill")
+                    }
+                    .padding()
+                
+                MenuView(gameState: gameState)
+                    .tabItem{
+                        Label("Menu" , systemImage: "gearshape")
+                    }
+                    .padding()
+            }
+            .tabViewStyle(.page)
             
-            MenuView(gameState: gameState)
-                .tabItem{
-                    Label("Menu" , systemImage: "gearshape")
-                }
-                .padding()
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
     
@@ -37,5 +46,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
+        ContentView()
+            .environment(\.colorScheme, .dark)
     }
 }

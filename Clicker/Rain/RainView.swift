@@ -14,6 +14,10 @@ struct RainView: View {
     
     var body: some View {
         ZStack {
+            
+            Color("Color")
+                .edgesIgnoringSafeArea(.all)
+            
             // Makes it rain the amount of raindropsPerSecond in the game
             if gameState.rainPerSecond > 0 {
                 RainDropView(rainPerSecond: $gameState.rainPerSecond)
@@ -87,6 +91,7 @@ struct RainView_Previews: PreviewProvider {
         
     @ObservedObject var gameState = GameState()
         RainView(gameState: gameState)
+            .environment(\.colorScheme, .dark)
     }
 }
 

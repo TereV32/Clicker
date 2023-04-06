@@ -12,6 +12,10 @@ struct LightningView: View {
     
     var body: some View {
         ZStack {
+            
+            Color("Color")
+                .edgesIgnoringSafeArea(.all)
+            
             // Makes it rain the amount of raindropsPerSecond in the game
             if gameState.lightningCount > 0 {
                 randomLightningView(lightningCount: $gameState.lightningCount)
@@ -65,5 +69,8 @@ struct LightningView: View {
 struct LightningView_Previews: PreviewProvider {
     static var previews: some View {
         LightningView()
+        
+        LightningView()
+            .environment(\.colorScheme, .dark)
     }
 }

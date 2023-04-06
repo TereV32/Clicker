@@ -31,6 +31,7 @@ struct RainDrop: View {
 
 // Creates an x amount of raindrops depending on rainPerSecond
 struct RainDropView: View {
+        
     @Binding var rainPerSecond: Int
 
     var body: some View {
@@ -44,7 +45,6 @@ struct RainDropView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.clear)
         .ignoresSafeArea()
     }
 }
@@ -52,6 +52,9 @@ struct RainDropView: View {
 
 struct RainDrop_Previews: PreviewProvider {
     static var previews: some View {
+        @ObservedObject var gameState = GameState()
+        
         RainDrop()
+        RainDropView(rainPerSecond: $gameState.rainPerSecond)
     }
 }

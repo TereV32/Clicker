@@ -15,6 +15,10 @@ struct MenuView: View {
         //Button("Press to Dismiss") {
         //dismiss()
         ZStack {
+            
+            Color("Color")
+                .edgesIgnoringSafeArea(.all)
+            
             /* Makes it rain the amount of raindropsPerSecond in the game
             if gameState.rainPerSecond > 0 {
                 RainDropView(rainPerSecond: $gameState.rainPerSecond)
