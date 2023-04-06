@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Declares the variables for the Rain Generetors
+// Declares RainGenerator structure with variables for the Rain Generetors
 struct RainGenerator : Identifiable {
     var id = UUID()
     var name: String
@@ -15,7 +15,7 @@ struct RainGenerator : Identifiable {
     var price: Int
 }
 
-// Declare variables for Lightning Generators
+// Declare LightningGenerator structure with variables for Lightning Generators
 struct LightningGenerator : Identifiable {
     var id = UUID()
     var name: String
