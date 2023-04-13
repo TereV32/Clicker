@@ -6,19 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
-// Declares RainGenerator structure with variables for the Rain Generetors
-struct RainGenerator : Identifiable {
+// Declare CubeColor structure with variables for Cube Upgrades
+struct CubeColor : Identifiable {
     var id = UUID()
     var name: String
-    var rainPerSecond: Int
-    var price: Int
-}
-
-// Declare LightningGenerator structure with variables for Lightning Generators
-struct LightningGenerator : Identifiable {
-    var id = UUID()
-    var name: String
-    var lightning: Int
-    var price: Int
+    var description: String
+    var color: Color
+    var waterPerSecond: Int
+    var oxygenPerSecond: Int
+    var waterPrice: Int
+    var sunPrice: Int
 }

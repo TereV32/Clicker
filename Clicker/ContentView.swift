@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @ObservedObject var gameState = GameState()
     
     var body: some View {
@@ -15,30 +16,9 @@ struct ContentView: View {
             Color("Color")
                 .edgesIgnoringSafeArea(.all)
             
-            TabView {
-                
-                RainView(gameState: gameState)
-                    .tabItem {
-                        Label("Rain", systemImage: "cloud.drizzle.fill")
-                    }
-                    .padding()
-                
-                LightningView(gameState: gameState)
-                    .tabItem {
-                        Label("Lightning", systemImage: "cloud.bolt.fill")
-                    }
-                    .padding()
-                
-                MenuView(gameState: gameState)
-                    .tabItem{
-                        Label("Menu" , systemImage: "gearshape")
-                    }
-                    .padding()
-            }
-            .tabViewStyle(.page)
-            
+            ButtonViews(gameState: gameState)
+                .padding(20)
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
     
