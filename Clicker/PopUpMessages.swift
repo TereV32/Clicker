@@ -34,8 +34,19 @@ struct upgradeCube: View {
     
     var body: some View {
         VStack() {
-            Text("\(gameState.waterCount) Water")
-                .font(.subheadline)
+            HStack {
+                Spacer()
+                Text("\(gameState.waterCount) Water")
+                    .font(.title3)
+                    .padding(20)
+                    .padding(.trailing, 20.0)
+                    .fontWeight(.semibold)
+                Spacer()
+                Text("\(gameState.sunCount) Sun")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                Spacer()
+            }
             
             //Creates a list of upgrades
             List(gameState.cubeColors) { cubeColor in
@@ -81,9 +92,10 @@ struct upgradeCube: View {
     }
 }
 
-//struct PopUpMessages_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PopUpMessages()
-//        upgradeCube(gameState: GameState())
-//    }
-//}
+/*struct PopUpMessages_Previews: PreviewProvider {
+    static var previews: some View {
+        PopUpMessages()
+        upgradeCube(gameState: GameState())
+    }
+}
+*/

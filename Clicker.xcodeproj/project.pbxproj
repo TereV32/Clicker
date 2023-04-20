@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */; };
 		4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */; };
+		4E654E6329F0B27E00FC5F96 /* ShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E654E6229F0B27E00FC5F96 /* ShelfView.swift */; };
 		AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */; };
 		AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D529AFA1B10098A5E6 /* ContentView.swift */; };
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointGenerator.swift; sourceTree = "<group>"; };
 		4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		4E654E6229F0B27E00FC5F96 /* ShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		AC3321D029AFA1B10098A5E6 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
 		AC3321D529AFA1B10098A5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				4E3FD1B229DCBFA700EF4BA8 /* Generators  */,
 				ACD963A729E7163600368AA7 /* PopUpMessages.swift */,
 				ACD963AD29E78D0100368AA7 /* ButtonViews.swift */,
+				4E654E6229F0B27E00FC5F96 /* ShelfView.swift */,
 				ACD963AB29E77EBE00368AA7 /* CubeGridView.swift */,
 				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
 				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
@@ -171,6 +174,7 @@
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
 				ACD963AC29E77EBE00368AA7 /* CubeGridView.swift in Sources */,
+				4E654E6329F0B27E00FC5F96 /* ShelfView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
