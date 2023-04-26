@@ -27,15 +27,34 @@ struct CubeView: View {
                 print(gameState.currentCube?.imageName ?? "")
             }
         VStack {
-            if isSelected && !gameState.upgradeComplete {
+            if !gameState.flowers.contains(gameState.cubeColorsArray[cubeValue]) {
+                Image(systemName: gameState.cubeColorsArray[cubeValue])
+                    .foregroundColor(
+                        (gameState.cubeColorsArray[cubeValue] == "drop.fill") ? .blue : (gameState.cubeColorsArray[cubeValue] == "sun.max.fill") ? .yellow : .green)
+            } else {
+                Image(gameState.cubeColorsArray[cubeValue])
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(5)
+            }
+            
+            
+            if isSelected && !gameState.upgradeWaterComplete {
+                collectBarView(gameState: gameState)
+                    .onDisappear {
+                        isSelected = false
+                    }
+            } else if isSelected && !gameState.upgradeSunComplete {
+                collectBarView(gameState: gameState)
+                    .onDisappear {
+                        isSelected = false
+                    }
+            } else if isSelected && !gameState.upgradeGrassComplete {
                 collectBarView(gameState: gameState)
                     .onDisappear {
                         isSelected = false
                     }
             }
-            Image(systemName: gameState.cubeColorsArray[cubeValue])
-                .foregroundColor(
-                    (gameState.cubeColorsArray[cubeValue] == "drop.fill") ? .blue : (gameState.cubeColorsArray[cubeValue] == "sun.max.fill") ? .yellow : .green)
         }
         .frame(width: 50, height: 50)
     }
@@ -46,7 +65,7 @@ struct CubeView: View {
             gameState.getSunCube(cubeColor: self.gameState.cubeColors[2])
         } else if gameState.cubeColorsArray[cubeValue] == "sun.max.fill" {
             gameState.getGrassCube(cubeColor: self.gameState.cubeColors[3])
-        } else {
+        } else if gameState.cubeColorsArray[cubeValue] == "leaf.fill" {
             gameState.getPlant(cubeColor: self.gameState.cubeColors[4])
         }
     }
@@ -56,6 +75,7 @@ struct CubeView: View {
 struct CubeGridView: View {
     
     @ObservedObject var gameState : GameState
+    var level = 1
     
     var body: some View {
         ZStack {

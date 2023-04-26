@@ -20,7 +20,11 @@ class GameState : ObservableObject {
     @Published var cubeColorsArray: [String] = ["", "", "", "", "", "", "", "", ""]
     
     @Published var gridFull = false
-    @Published var upgradeComplete = false
+    
+    @Published var upgradeWaterComplete = false
+    @Published var upgradeSunComplete = false
+    @Published var upgradeGrassComplete = false
+
     
     @Published var flowers = ["Flower1", "Flower2", "Flower3", "Flower4", "Flower5", "Flower6"]
     
@@ -31,9 +35,9 @@ class GameState : ObservableObject {
     @Published var cubeColors: [ CubeColor ] = [
         CubeColor(imageName: "", color: .brown, numToUpgrade: 0),
         CubeColor(imageName: "drop.fill", color: .blue, numToUpgrade: 0),
-        CubeColor(imageName: "sun.max.fill", color: .yellow, numToUpgrade: 10),
-        CubeColor(imageName: "leaf.fill", color: .green, numToUpgrade: 15),
-        CubeColor(imageName: "plant", color: .clear, numToUpgrade: 20)]
+        CubeColor(imageName: "sun.max.fill", color: .yellow, numToUpgrade: 1),
+        CubeColor(imageName: "leaf.fill", color: .green, numToUpgrade: 1),
+        CubeColor(imageName: "plant", color: .clear, numToUpgrade: 1)]
     
 //    //Declares the Timer with nil
 //    var timer: Timer?
@@ -52,7 +56,7 @@ class GameState : ObservableObject {
         let BrownIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "" }
         if let randomIndex = BrownIndices.randomElement() {
             cubeColorsArray[randomIndex] = cubeColor.imageName
-            objectWillChange.send()
+//            objectWillChange.send()
         }
         print(cubeColorsArray)
     }
@@ -65,20 +69,19 @@ class GameState : ObservableObject {
         print(cubeClicked)
         if let randomIndex = blueIndices.randomElement() {
             cubeColorsArray[randomIndex] = ""
-            objectWillChange.send()
+//            objectWillChange.send()
         }
         if !blueIndices.isEmpty {
             waterCount += 1
         }
         if waterCount == cubeColor.numToUpgrade {
             cubeColorsArray.insert("sun.max.fill", at: cubeClicked)
-            upgradeComplete = true
+            upgradeWaterComplete = true
             waterCount = 0
         } else {
             cubeColorsArray.insert("drop.fill", at: cubeClicked)
-            upgradeComplete = false
+            upgradeWaterComplete = false
         }
-        print(upgradeComplete)
     }
     
     // Function that collects sun and when meets requirements changes cube to a grass
@@ -89,20 +92,19 @@ class GameState : ObservableObject {
         print(cubeClicked)
         if let randomIndex = yellowIndices.randomElement() {
             cubeColorsArray[randomIndex] = ""
-            objectWillChange.send()
+//            objectWillChange.send()
         }
         if !yellowIndices.isEmpty {
             sunCount += 1
         }
-        if waterCount == cubeColor.numToUpgrade {
+        if sunCount == cubeColor.numToUpgrade {
             cubeColorsArray.insert("leaf.fill", at: cubeClicked)
-            upgradeComplete = true
+            upgradeSunComplete = true
             sunCount = 0
         } else {
             cubeColorsArray.insert("sun.max.fill", at: cubeClicked)
-            upgradeComplete = false
+            upgradeSunComplete = false
         }
-        print(upgradeComplete)
     }
     
     // Function that collects grass and when meets requirements changes cube to a plant
@@ -118,14 +120,14 @@ class GameState : ObservableObject {
             grassCount += 1
         }
         if grassCount == cubeColor.numToUpgrade {
-            cubeColorsArray.insert("plant", at: cubeClicked)
-            upgradeComplete = true
+            cubeColorsArray.insert(flowers.randomElement()!, at: cubeClicked)
+            upgradeGrassComplete = true
             grassCount = 0
+            print(cubeColorsArray)
         } else {
             cubeColorsArray.insert("leaf.fill", at: cubeClicked)
-            upgradeComplete = false
+            upgradeGrassComplete = false
         }
-        print(upgradeComplete)
     }
     
 //    // Function where it adds generators points to the count.

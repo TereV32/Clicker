@@ -11,9 +11,11 @@ struct ButtonViews: View {
     
     @ObservedObject var gameState : GameState
     @State var imageName: String
+    var level = 1
     
     var body: some View {
         VStack {
+            Spacer()
             Spacer()
             CubeGridView(gameState: gameState)
             Spacer()
@@ -42,6 +44,8 @@ struct ButtonViews: View {
                     }
                 }
             }
+            Spacer()
+            Spacer()
         }
     }
 }
