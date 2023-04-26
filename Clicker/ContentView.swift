@@ -12,19 +12,20 @@ struct ContentView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
+        
         TabView {
-            ButtonViews(gameState: gameState)
-                .tabItem{
+            ButtonViews(gameState: gameState, imageName: gameState.currentCube?.imageName ?? "")
+                .tabItem {
                     Label("Home", systemImage: "house")
                 }
             ShelfView()
-                .tabItem{
+                .tabItem {
                     Label("Shelf", systemImage: "leaf.circle.fill")
                 }
-                
         }
-        
-        
+//            Color("Color")
+//                .edgesIgnoringSafeArea(.all)
+            
     }
 }
     
