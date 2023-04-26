@@ -24,78 +24,40 @@ struct PopUpMessages: View {
     }
 }
 
-//Creates a sheet view that allows the user to make upgrades
-struct upgradeCube: View {
+// View that shows a collection bar to allow user to see how many more items needed
+struct collectBarView: View {
     
-    @Environment(\.dismiss) var dismiss
     @ObservedObject var gameState : GameState
-    @Binding var color: Color
-
     
     var body: some View {
-        VStack() {
-            HStack {
-                Spacer()
-                Text("\(gameState.waterCount) Water")
-                    .font(.title3)
-                    .padding(20)
-                    .padding(.trailing, 20.0)
-                    .fontWeight(.semibold)
-                Spacer()
-                Text("\(gameState.sunCount) Sun")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                Spacer()
-            }
-            
-            //Creates a list of upgrades
-            List(gameState.cubeColors) { cubeColor in
-                //Seperates into sections by category of upgrade
-                Section {
-                    HStack() {
-                        RoundedRectangle(cornerRadius: 5)
-                            .fill(cubeColor.color)
-                            .frame(width: 40, height: 40)
-                            .padding()
-                        VStack(alignment: .leading) {
-                            Text("\(cubeColor.name)")
-                            Text("Cost: \(cubeColor.waterPrice) Water")
-                            Text("Cost: \(cubeColor.sunPrice) Sun")
-                            
-                        }
-                        Spacer()
-                        Group {
-                            Button(action: {
-                                self.gameState.purchaseCube(cubeColor: cubeColor)
-                                self.color = gameState.currentCube?.color ?? .brown       //Changes the color of block selected to upgrade choosen
-                                dismiss()       //Returns to main view after upgrade has been purchased
-                            }) {
-                                Text("Purchase")
-                            }
-                            .buttonStyle(BorderlessButtonStyle())
-                            .disabled((self.gameState.waterCount < cubeColor.waterPrice) || (self.gameState.sunCount < cubeColor.sunPrice))
-                        }
-                    }
-                } footer: {
-                    Text(cubeColor.description)
-                }
-            }
-            .listStyle(.insetGrouped)
-            
-            //Allows user to get out of sheet
-            Button(action: {
-                dismiss()
-            }) {
-                Image(systemName: "xmark.app")
-            }
+        ZStack {
+            Capsule()
+                .fill(Color.gray)
+                .opacity(0.5)
+                .frame(width: 45, height: 10)
+            Capsule()
+                .fill(Color.white)
+                .frame(width: CGFloat(showBar())*4.5, height: 10)
         }
+    }
+    
+    func showBar() -> Int {
+        var upgradeValue = 0
+        if gameState.cubeColorsArray[gameState.cubeClicked] == "drop.fill" {
+            upgradeValue = gameState.waterCount
+        } else if gameState.cubeColorsArray[gameState.cubeClicked] == "sun.max.fill" {
+            upgradeValue = gameState.sunCount
+        }
+        print(gameState.cubeColorsArray[gameState.cubeClicked])
+        print(upgradeValue)
+        return upgradeValue
     }
 }
 
-/*struct PopUpMessages_Previews: PreviewProvider {
+struct PopUpMessages_Previews: PreviewProvider {
     static var previews: some View {
         PopUpMessages()
-        upgradeCube(gameState: GameState())
+        collectBarView(gameState: GameState())
     }
-}
-*/
+ }
+ 
