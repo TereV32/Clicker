@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ShelfView: View {
-    private let data: [Int] = Array(1...16)
+    private var data: [Int] = Array(1...6)
     
     // Set the image of flowers later
-    private let flowers: [Color] = [.gray, .gray]
+    private var flowers = ["Flower1", "Flower2", "Flower3"]
     
     // Flexible columns that fill the remaining space
     private let numberColumns = [
@@ -37,27 +37,28 @@ struct ShelfView: View {
                         ZStack {
                             Rectangle()
                                 .frame(width: 170, height: 170)
-                                .foregroundColor(flowers[number%2])
+                                //.foregroundColor(flowers[number%3])
                                 .cornerRadius(30)
-                                //.disabled(true)
+                            //Image(flowers[number])
+
                                 
-                                
-                                
+                           
+                            
                         }
                     }
                 }
+                .navigationBarTitleDisplayMode(.automatic)
+                .navigationTitle("Flower Shelf")
+                .padding()
+                
             }
-            .navigationBarTitleDisplayMode(.automatic)
-            .navigationTitle("Flower Shelf")
-            .padding()
-            
         }
+        
     }
     
-}
-
-struct ShelfView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShelfView()
+    struct ShelfView_Previews: PreviewProvider {
+        static var previews: some View {
+            ShelfView()
+        }
     }
 }
