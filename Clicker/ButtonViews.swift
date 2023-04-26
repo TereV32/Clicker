@@ -14,38 +14,42 @@ struct ButtonViews: View {
     var level = 1
     
     var body: some View {
-        VStack {
-            Spacer()
-            Spacer()
-            CubeGridView(gameState: gameState)
-            Spacer()
-            //Buttons
-            HStack {
-                //Button to get water
-                Button(action: {
-                    if gameState.isGridFull() {
-                        gameState.gridFull = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            gameState.gridFull = false
+        ZStack {
+            Color("Color")
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Spacer()
+                CubeGridView(gameState: gameState)
+                Spacer()
+                //Buttons
+                HStack {
+                    //Button to get water
+                    Button(action: {
+                        if gameState.isGridFull() {
+                            gameState.gridFull = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                gameState.gridFull = false
+                            }
+                        } else {
+                            self.gameState.getWaterCube(cubeColor: self.gameState.cubeColors[1])
+                            self.imageName = gameState.currentCube?.imageName ?? ""       //Changes the color of block selected to upgrade choosen
+                            print(gameState.currentCube?.imageName ?? "")
                         }
-                    } else {
-                        self.gameState.getWaterCube(cubeColor: self.gameState.cubeColors[1])
-                        self.imageName = gameState.currentCube?.imageName ?? ""       //Changes the color of block selected to upgrade choosen
-                        print(gameState.currentCube?.imageName ?? "")
-                    }
-                }) {
-                    ZStack {
-                        Capsule()
-                            .fill(.blue)
-                            .frame(width: 150, height: 75)
-                        Image(systemName: "drop.fill")
-                            .font(.system(size: 30))
-                            .foregroundColor(.teal)
+                    }) {
+                        ZStack {
+                            Capsule()
+                                .fill(.blue)
+                                .frame(width: 150, height: 75)
+                            Image(systemName: "drop.fill")
+                                .font(.system(size: 30))
+                                .foregroundColor(.teal)
+                        }
                     }
                 }
+                Spacer()
+                Spacer()
             }
-            Spacer()
-            Spacer()
         }
     }
 }

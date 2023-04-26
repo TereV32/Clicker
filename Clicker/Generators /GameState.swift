@@ -39,16 +39,6 @@ class GameState : ObservableObject {
         CubeColor(imageName: "leaf.fill", color: .green, numToUpgrade: 1),
         CubeColor(imageName: "plant", color: .clear, numToUpgrade: 1)]
     
-//    //Declares the Timer with nil
-//    var timer: Timer?
-//
-//    // Initializes a count timer that fires off every 1 second. Repears forever
-//    init() {
-//        self.waterCount = 0
-//        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
-//            self.tick() // repeats ticks function to update raindrops/s
-//        })
-//    }
     
     
     // Function to change cube to water when button is clicked
@@ -56,7 +46,6 @@ class GameState : ObservableObject {
         let BrownIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "" }
         if let randomIndex = BrownIndices.randomElement() {
             cubeColorsArray[randomIndex] = cubeColor.imageName
-//            objectWillChange.send()
         }
         print(cubeColorsArray)
     }
@@ -69,7 +58,6 @@ class GameState : ObservableObject {
         print(cubeClicked)
         if let randomIndex = blueIndices.randomElement() {
             cubeColorsArray[randomIndex] = ""
-//            objectWillChange.send()
         }
         if !blueIndices.isEmpty {
             waterCount += 1
@@ -92,7 +80,6 @@ class GameState : ObservableObject {
         print(cubeClicked)
         if let randomIndex = yellowIndices.randomElement() {
             cubeColorsArray[randomIndex] = ""
-//            objectWillChange.send()
         }
         if !yellowIndices.isEmpty {
             sunCount += 1
@@ -130,13 +117,9 @@ class GameState : ObservableObject {
         }
     }
     
-//    // Function where it adds generators points to the count.
-//    func tick() {
-//        self.waterCount += self.waterPerSceond
-//    }
     
     // Function to see if grid is full
     func isGridFull() -> Bool {
-        return cubeColorsArray.allSatisfy{ $0 == "drop.fill" }
+        return !cubeColorsArray.contains("")
     }
 }

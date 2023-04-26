@@ -38,25 +38,30 @@ struct ShelfView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                Grid {
-                    ForEach(0..<3, id: \.self) { row in
-                        GridRow {
-                            ForEach(0..<2, id: \.self) { column in
-//                                let cubeValue = row * 3 + column
-//
-                                flowerView(gameState: gameState)
+            ZStack {
+                
+                Color("Color")
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView {
+                    Grid {
+                        ForEach(0..<3, id: \.self) { row in
+                            GridRow {
+                                ForEach(0..<2, id: \.self) { column in
+                                    //                                let cubeValue = row * 3 + column
+                                    //
+                                    flowerView(gameState: gameState)
+                                }
                             }
                         }
                     }
+                    .navigationBarTitleDisplayMode(.automatic)
+                    .navigationTitle("Flower Shelf")
+                    .padding()
+                    
                 }
-                .navigationBarTitleDisplayMode(.automatic)
-                .navigationTitle("Flower Shelf")
-                .padding()
-                
             }
         }
-        
     }
 }
     

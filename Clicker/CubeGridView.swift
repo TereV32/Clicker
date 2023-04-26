@@ -20,25 +20,12 @@ struct CubeView: View {
             .frame(width: 60, height: 60)
             // Allows user to tap cube that allows user to upgrade
             .onTapGesture {
-//                isSelected = (!gameState.upgradeComplete) ? true : false
                 isSelected = true
                 gameState.cubeClicked = cubeValue
                 upgrade()
                 print(gameState.currentCube?.imageName ?? "")
             }
         VStack {
-            if !gameState.flowers.contains(gameState.cubeColorsArray[cubeValue]) {
-                Image(systemName: gameState.cubeColorsArray[cubeValue])
-                    .foregroundColor(
-                        (gameState.cubeColorsArray[cubeValue] == "drop.fill") ? .blue : (gameState.cubeColorsArray[cubeValue] == "sun.max.fill") ? .yellow : .green)
-            } else {
-                Image(gameState.cubeColorsArray[cubeValue])
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .cornerRadius(5)
-            }
-            
-            
             if isSelected && !gameState.upgradeWaterComplete {
                 collectBarView(gameState: gameState)
                     .onDisappear {
@@ -54,6 +41,17 @@ struct CubeView: View {
                     .onDisappear {
                         isSelected = false
                     }
+            }
+            
+            if !gameState.flowers.contains(gameState.cubeColorsArray[cubeValue]) {
+                Image(systemName: gameState.cubeColorsArray[cubeValue])
+                    .foregroundColor(
+                        (gameState.cubeColorsArray[cubeValue] == "drop.fill") ? .blue : (gameState.cubeColorsArray[cubeValue] == "sun.max.fill") ? .yellow : .green)
+            } else {
+                Image(gameState.cubeColorsArray[cubeValue])
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(5)
             }
         }
         .frame(width: 50, height: 50)
