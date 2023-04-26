@@ -7,43 +7,46 @@
 
 import SwiftUI
 
+struct flowerView: View {
+    
+    @ObservedObject var gameState : GameState
+//    var number : Int
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .frame(width: 170, height: 170)
+                .cornerRadius(30)
+            
+            //            Image(gameState.flowers[number])
+            Image(gameState.flowers.randomElement()!)
+                .resizable()
+                .cornerRadius(30)
+                .frame(width: 170, height: 170)
+        }
+    }
+}
+
 struct ShelfView: View {
-    private var data: [Int] = Array(1...6)
+    
+    @ObservedObject var gameState : GameState
+    
+//    private var data: [Int] = Array(1...6)
     
     // Set the image of flowers later
-    private var flowers = ["Flower1", "Flower2", "Flower3"]
-    
-    // Flexible columns that fill the remaining space
-    private let numberColumns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()) ]
-    
-    // Adaptive to make sure its the size of smallest element
-    private let adaptiveColumns = [
-        GridItem(.adaptive(minimum: 170))
-    ]
-    
-    // Fixed creates columns with fixed dimensions
-    private let fixedColumns = [
-        GridItem(.fixed(200)),
-        GridItem(.fixed(200))
-    ]
+//    @State private var flowers = ["Flower1", "Flower2", "Flower3"].shuffled()
     
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: adaptiveColumns, spacing: 20) {
-                    ForEach(data, id: \.self) { number in
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 170, height: 170)
-                                //.foregroundColor(flowers[number%3])
-                                .cornerRadius(30)
-                            //Image(flowers[number])
-
-                                
-                           
-                            
+                Grid {
+                    ForEach(0..<3, id: \.self) { row in
+                        GridRow {
+                            ForEach(0..<2, id: \.self) { column in
+//                                let cubeValue = row * 3 + column
+//
+                                flowerView(gameState: gameState)
+                            }
                         }
                     }
                 }
@@ -55,10 +58,12 @@ struct ShelfView: View {
         }
         
     }
+}
     
-    struct ShelfView_Previews: PreviewProvider {
-        static var previews: some View {
-            ShelfView()
-        }
+struct ShelfView_Previews: PreviewProvider {
+    static var previews: some View {
+        ShelfView(gameState: GameState())
+        
+//        flowerView(gameState: GameState())
     }
 }

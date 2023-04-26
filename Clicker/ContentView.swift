@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            ShelfView()
+            ShelfView(gameState: gameState)
                 .tabItem {
                     Label("Shelf", systemImage: "leaf.circle.fill")
                 }

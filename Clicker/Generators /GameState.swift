@@ -22,6 +22,8 @@ class GameState : ObservableObject {
     @Published var gridFull = false
     @Published var upgradeComplete = false
     
+    @Published var flowers = ["Flower1", "Flower2", "Flower3", "Flower4", "Flower5", "Flower6"]
+    
     // Sees if game has been started before
     @Published var firstStartMessage = false
     
