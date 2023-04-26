@@ -12,13 +12,18 @@ struct ContentView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
-        ZStack {
-            Color("Color")
-                .edgesIgnoringSafeArea(.all)
-            
+        TabView {
             ButtonViews(gameState: gameState)
-                .padding(20)
+                .tabItem{
+                    Label("Home", systemImage: "house")
+                }
+            ShelfView()
+                .tabItem{
+                    Label("Shelf", systemImage: "leaf.circle.fill")
+                }
         }
+        
+        
     }
 }
     
