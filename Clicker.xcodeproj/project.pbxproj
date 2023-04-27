@@ -7,32 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E0C49BD29DDF92F002ECF83 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0C49BC29DDF92F002ECF83 /* MenuView.swift */; };
 		4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */; };
 		4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */; };
+		4E654E6329F0B27E00FC5F96 /* ShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E654E6229F0B27E00FC5F96 /* ShelfView.swift */; };
 		AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */; };
 		AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3321D529AFA1B10098A5E6 /* ContentView.swift */; };
 		AC3321D829AFA1B30098A5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321D729AFA1B30098A5E6 /* Assets.xcassets */; };
 		AC3321DB29AFA1B30098A5E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */; };
-		AC72A21229D6702E001A81ED /* RainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC72A21129D6702E001A81ED /* RainView.swift */; };
-		ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */; };
-		ACAA1B7829DD00F600DCB3A1 /* Grassblades.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */; };
-		ACAA1B7A29DD028900DCB3A1 /* GrassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAA1B7929DD028900DCB3A1 /* GrassView.swift */; };
+		ACD963A829E7163600368AA7 /* PopUpMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD963A729E7163600368AA7 /* PopUpMessages.swift */; };
+		ACD963AC29E77EBE00368AA7 /* CubeGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD963AB29E77EBE00368AA7 /* CubeGridView.swift */; };
+		ACD963AE29E78D0100368AA7 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD963AD29E78D0100368AA7 /* ButtonViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4E0C49BC29DDF92F002ECF83 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		4E3FD1B329DCBFD400EF4BA8 /* PointGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointGenerator.swift; sourceTree = "<group>"; };
 		4E3FD1B529DCC11A00EF4BA8 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		4E654E6229F0B27E00FC5F96 /* ShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		AC3321D029AFA1B10098A5E6 /* Clicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerApp.swift; sourceTree = "<group>"; };
 		AC3321D529AFA1B10098A5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC3321D729AFA1B30098A5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AC72A21129D6702E001A81ED /* RainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainView.swift; sourceTree = "<group>"; };
-		ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainDrop.swift; sourceTree = "<group>"; };
-		ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grassblades.swift; sourceTree = "<group>"; };
-		ACAA1B7929DD028900DCB3A1 /* GrassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassView.swift; sourceTree = "<group>"; };
+		ACD963A729E7163600368AA7 /* PopUpMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpMessages.swift; sourceTree = "<group>"; };
+		ACD963AB29E77EBE00368AA7 /* CubeGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeGridView.swift; sourceTree = "<group>"; };
+		ACD963AD29E78D0100368AA7 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +72,14 @@
 		AC3321D229AFA1B10098A5E6 /* Clicker */ = {
 			isa = PBXGroup;
 			children = (
-				ACAA1B7629DD00DB00DCB3A1 /* Grass */,
-				AC72A21329D670C9001A81ED /* Rain */,
-				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
-				4E0C49BC29DDF92F002ECF83 /* MenuView.swift */,
-				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
-				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
 				4E3FD1B229DCBFA700EF4BA8 /* Generators  */,
+				ACD963A729E7163600368AA7 /* PopUpMessages.swift */,
+				ACD963AD29E78D0100368AA7 /* ButtonViews.swift */,
+				4E654E6229F0B27E00FC5F96 /* ShelfView.swift */,
+				ACD963AB29E77EBE00368AA7 /* CubeGridView.swift */,
+				AC3321D529AFA1B10098A5E6 /* ContentView.swift */,
+				AC3321D329AFA1B10098A5E6 /* ClickerApp.swift */,
+				AC3321D729AFA1B30098A5E6 /* Assets.xcassets */,
 				AC3321D929AFA1B30098A5E6 /* Preview Content */,
 			);
 			path = Clicker;
@@ -92,24 +91,6 @@
 				AC3321DA29AFA1B30098A5E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AC72A21329D670C9001A81ED /* Rain */ = {
-			isa = PBXGroup;
-			children = (
-				AC72A21129D6702E001A81ED /* RainView.swift */,
-				ACAA1B7429DCE6FF00DCB3A1 /* RainDrop.swift */,
-			);
-			path = Rain;
-			sourceTree = "<group>";
-		};
-		ACAA1B7629DD00DB00DCB3A1 /* Grass */ = {
-			isa = PBXGroup;
-			children = (
-				ACAA1B7729DD00F600DCB3A1 /* Grassblades.swift */,
-				ACAA1B7929DD028900DCB3A1 /* GrassView.swift */,
-			);
-			path = Grass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,15 +167,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACAA1B7829DD00F600DCB3A1 /* Grassblades.swift in Sources */,
-				ACAA1B7529DCE6FF00DCB3A1 /* RainDrop.swift in Sources */,
 				4E3FD1B429DCBFD400EF4BA8 /* PointGenerator.swift in Sources */,
-				AC72A21229D6702E001A81ED /* RainView.swift in Sources */,
-				4E0C49BD29DDF92F002ECF83 /* MenuView.swift in Sources */,
+				ACD963AE29E78D0100368AA7 /* ButtonViews.swift in Sources */,
 				4E3FD1B629DCC11A00EF4BA8 /* GameState.swift in Sources */,
-				ACAA1B7A29DD028900DCB3A1 /* GrassView.swift in Sources */,
+				ACD963A829E7163600368AA7 /* PopUpMessages.swift in Sources */,
 				AC3321D629AFA1B10098A5E6 /* ContentView.swift in Sources */,
 				AC3321D429AFA1B10098A5E6 /* ClickerApp.swift in Sources */,
+				ACD963AC29E77EBE00368AA7 /* CubeGridView.swift in Sources */,
+				4E654E6329F0B27E00FC5F96 /* ShelfView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +303,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Clicker/Preview Content\"";
-				DEVELOPMENT_TEAM = 3WC267267S;
+				DEVELOPMENT_TEAM = H275ANPJC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ClickStorm;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,9 +333,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Clicker/Preview Content\"";
-				DEVELOPMENT_TEAM = 3WC267267S;
+				DEVELOPMENT_TEAM = H275ANPJC8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ClickStorm;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

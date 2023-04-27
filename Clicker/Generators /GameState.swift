@@ -6,57 +6,135 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GameState : ObservableObject {
     // Declares the Variables
-    @Published var count = 0
-    @Published var rainPerSecond = 0
-    
+    // Published prop. allows other views to react to changes
+    @Published var waterCount = 0
+    @Published var sunCount = 0
     @Published var grassCount = 0
-    @Published var priceOfGrass = 1000;
+    @Published var buttonClickedNum = 0
     
-    //Creates the rain generators
-    @Published var rainGenerators: [ RainGenerator ] = [
-        RainGenerator(name: "Rain Generator #1", rainPerSecond: 10, price: 10),
-        RainGenerator(name: "Rain Generator #2", rainPerSecond: 2, price: 50),
-        RainGenerator(name: "Rain Generator #3", rainPerSecond: 5, price: 150),
-        RainGenerator(name: "Rain Generator #4", rainPerSecond: 10, price: 400)]
+    @Published var currentCube : CubeColor?
+    @Published var cubeClicked = 0
+    @Published var cubeColorsArray: [String] = ["", "", "", "", "", "", "", "", ""]
     
-    //Declares the Timer
-    var timer: Timer?
+    @Published var gridFull = false
     
-    // Initializes a count the timer.
-    init() {
-        self.count = 1
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
-            self.tick()
-        })
-    }
-    
-    // Function for a click to increment the count
-    func click() {
-        self.count += 1
-    }
-    
-    // Function to purchase generators and reduce count.
-    func purchase(rainGenerator: RainGenerator) {
-        if rainGenerator.price <= self.count {
-            self.count -= rainGenerator.price
-            self.rainPerSecond += rainGenerator.rainPerSecond
-        }
-    }
-    
+    @Published var upgradeWaterComplete = false
+    @Published var upgradeSunComplete = false
+    @Published var upgradeGrassComplete = false
 
-    // Function where it adds generators points to the count. 
-    func tick() {
-        self.count += self.rainPerSecond
+    @Published var flowersCollected = 0
+    
+    @Published var flowers = ["Flower1", "Flower2", "Flower3", "Flower4", "Flower5", "Flower6"]
+    
+    // Sees if game has been started before
+    @Published var firstStartMessage = false
+    @Published var firstWaterMessage = false
+    
+    // Creates the cube upgrades with an arrays that initialized the values below
+    @Published var cubeColors: [ CubeColor ] = [
+        CubeColor(imageName: "", color: .brown, numToUpgrade: 0),
+        CubeColor(imageName: "drop.fill", color: .blue, numToUpgrade: 0),
+        CubeColor(imageName: "sun.max.fill", color: .yellow, numToUpgrade: 1),
+        CubeColor(imageName: "leaf.fill", color: .green, numToUpgrade: 1),
+        CubeColor(imageName: "plant", color: .clear, numToUpgrade: 1)]
+    
+    
+    
+    // Function to change cube to water when button is clicked
+    func getWaterCube(cubeColor: CubeColor) {
+        let BrownIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "" }
+        if let randomIndex = BrownIndices.randomElement() {
+            cubeColorsArray[randomIndex] = cubeColor.imageName
+        }
+        buttonClickedNum += 1
+        print(cubeColorsArray)
     }
     
-    // Function that creates grass    
-    func purchaseGrass() {
-        if priceOfGrass <= count {
-            self.count -= priceOfGrass
-            self.grassCount += 1
+    // Function that collects water and when meets requirements changes cube to sun
+    func getSunCube(cubeColor: CubeColor) {
+        cubeColorsArray.remove(at: cubeClicked)
+        let blueIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "drop.fill"  }
+        print(blueIndices)
+        print(cubeClicked)
+        if let randomIndex = blueIndices.randomElement() {
+            cubeColorsArray[randomIndex] = ""
+        }
+        if !blueIndices.isEmpty {
+            waterCount += 1
+        }
+        if waterCount == cubeColor.numToUpgrade {
+            cubeColorsArray.insert("sun.max.fill", at: cubeClicked)
+            upgradeWaterComplete = true
+            waterCount = 0
+        } else {
+            cubeColorsArray.insert("drop.fill", at: cubeClicked)
+            upgradeWaterComplete = false
         }
     }
+    
+    // Function that collects sun and when meets requirements changes cube to a grass
+    func getGrassCube(cubeColor: CubeColor) {
+        cubeColorsArray.remove(at: cubeClicked)
+        let yellowIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "sun.max.fill"  }
+        print(yellowIndices)
+        print(cubeClicked)
+        if let randomIndex = yellowIndices.randomElement() {
+            cubeColorsArray[randomIndex] = ""
+        }
+        if !yellowIndices.isEmpty {
+            sunCount += 1
+        }
+        if sunCount == cubeColor.numToUpgrade {
+            cubeColorsArray.insert("leaf.fill", at: cubeClicked)
+            upgradeSunComplete = true
+            sunCount = 0
+        } else {
+            cubeColorsArray.insert("sun.max.fill", at: cubeClicked)
+            upgradeSunComplete = false
+        }
+    }
+    
+    // Function that collects grass and when meets requirements changes cube to a plant
+    func getPlant(cubeColor: CubeColor) {
+        cubeColorsArray.remove(at: cubeClicked)
+        let greenIndices = cubeColorsArray.indices.filter { cubeColorsArray[$0] == "leaf.fill" }
+        print(greenIndices)
+        print(cubeClicked)
+        if let randomIndex = greenIndices.randomElement() {
+            cubeColorsArray[randomIndex] = ""
+        }
+        if !greenIndices.isEmpty {
+            grassCount += 1
+        }
+        if grassCount == cubeColor.numToUpgrade {
+            cubeColorsArray.insert(flowers.randomElement()!, at: cubeClicked)
+            upgradeGrassComplete = true
+            grassCount = 0
+            print(cubeColorsArray)
+        } else {
+            cubeColorsArray.insert("leaf.fill", at: cubeClicked)
+            upgradeGrassComplete = false
+        }
+    }
+    
+    // Collect Flower
+    func collectFlower(cubeColor: CubeColor) {
+        cubeColorsArray.insert("", at: cubeClicked)
+        flowersCollected += 1
+    }
+    
+    
+    
+    
+    // Function to see if grid is full
+    func isGridFull() -> Bool {
+        return !cubeColorsArray.contains("")
+    }
+    
+    
+    
 }
