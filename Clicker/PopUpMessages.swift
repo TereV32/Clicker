@@ -13,10 +13,32 @@ struct PopUpMessages: View {
             ZStack() {
                 Image(systemName: "bubble.middle.bottom.fill")
                     .resizable()
-                    .frame(width: 200, height: 150)
-                    .foregroundColor(Color.gray)
-                Text("Tap the screen to \ncreate rain!")
+                    .rotationEffect(.degrees(180))
+                    .frame(width: 200, height: 125)
+                    .foregroundColor(Color.black)
+                Text("Tap the button to \ncreate water!")
+                    .multilineTextAlignment(.center)
                     .foregroundColor(Color.white)
+                    .offset(x: 0, y: 10)
+            }
+            Spacer()
+        }
+        .padding()
+    }
+}
+
+struct PopUpMessage2: View {
+    var body: some View {
+        VStack {
+            ZStack() {
+                Image(systemName: "bubble.middle.bottom.fill")
+                    .resizable()
+                    .frame(width: 200, height: 125)
+                    .foregroundColor(Color.black)
+                Text("Tap water to \ncollect and upgrade!")
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(Color.white)
+                    .offset(x: 0, y: -10)
             }
             Spacer()
         }
@@ -57,6 +79,7 @@ struct collectBarView: View {
 struct PopUpMessages_Previews: PreviewProvider {
     static var previews: some View {
         PopUpMessages()
+        PopUpMessage2()
         collectBarView(gameState: GameState())
     }
  }

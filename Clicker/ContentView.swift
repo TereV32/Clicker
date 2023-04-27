@@ -12,26 +12,36 @@ struct ContentView: View {
     @ObservedObject var gameState = GameState()
     
     var body: some View {
-        ZStack {
-            Color("Color")
-                .edgesIgnoringSafeArea(.all)
-
-            TabView {
+        
+        TabView {
+            ZStack {
                 ButtonViews(gameState: gameState, imageName: gameState.currentCube?.imageName ?? "")
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                            
-                    }
-                ShelfView(gameState: gameState)
-                    .tabItem {
-                        Label("Shelf", systemImage: "leaf.circle.fill")
-                    }
+                if gameState.firstStartMessage {
+                    PopUpMessages()
+                        .offset(x: 0, y: 525)
+                }
+                if gameState.firstWaterMessage && gameState.buttonClickedNum == 2{
+                    PopUpMessage2()
+                        .offset(x: 0, y: 10)
+                }
             }
-            .accentColor(.black)
-
-            //            Color("Color")
-            //                .edgesIgnoringSafeArea(.all)
-            
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                    
+                }
+            ShelfView(gameState: gameState)
+                .tabItem {
+                    Label("Shelf", systemImage: "leaf.circle.fill")
+                }
+        }
+        .accentColor(.black)
+        .onAppear {
+            if !gameState.firstStartMessage {
+                gameState.firstStartMessage = true
+            }
+            if !gameState.firstWaterMessage {
+                gameState.firstWaterMessage = true
+            }
         }
     }
 }

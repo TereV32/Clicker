@@ -11,7 +11,6 @@ struct ButtonViews: View {
     
     @ObservedObject var gameState : GameState
     @State var imageName: String
-    var level = 1
     
     var body: some View {
         ZStack {
@@ -20,6 +19,7 @@ struct ButtonViews: View {
             VStack {
                 Spacer()
                 Spacer()
+                
                 CubeGridView(gameState: gameState)
                 Spacer()
                 //Buttons
@@ -34,6 +34,7 @@ struct ButtonViews: View {
                         } else {
                             self.gameState.getWaterCube(cubeColor: self.gameState.cubeColors[1])
                             self.imageName = gameState.currentCube?.imageName ?? ""       //Changes the color of block selected to upgrade choosen
+                            gameState.firstStartMessage = false
                             print(gameState.currentCube?.imageName ?? "")
                         }
                     }) {
@@ -60,5 +61,7 @@ struct ButtonViews_Previews: PreviewProvider {
         @ObservedObject var gameState = GameState()
         
         ButtonViews(gameState: GameState(), imageName: gameState.currentCube?.imageName ?? "")
+            
+            
     }
 }

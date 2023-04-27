@@ -15,3 +15,8 @@ struct CubeColor : Identifiable {
     var color: Color
     var numToUpgrade: Int
 }
+
+struct CubeGrid : Identifiable {
+    var id = UUID()
+    var isUnlocked = false
+}

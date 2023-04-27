@@ -15,16 +15,17 @@ struct CubeView: View {
     @State var isSelected = false
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 5)
-            .fill(.brown)
-            .frame(width: 60, height: 60)
+            RoundedRectangle(cornerRadius: 5)
+                .fill(.brown)
+                .frame(width: 60, height: 60)
             // Allows user to tap cube that allows user to upgrade
-            .onTapGesture {
-                isSelected = true
-                gameState.cubeClicked = cubeValue
-                upgrade()
-                print(gameState.currentCube?.imageName ?? "")
-            }
+                .onTapGesture {
+                    gameState.firstWaterMessage = false
+                    isSelected = true
+                    gameState.cubeClicked = cubeValue
+                    upgrade()
+                    print(gameState.currentCube?.imageName ?? "")
+                }
         VStack {
             if isSelected && !gameState.upgradeWaterComplete {
                 collectBarView(gameState: gameState)
@@ -42,7 +43,6 @@ struct CubeView: View {
                         isSelected = false
                     }
             }
-            
             if !gameState.flowers.contains(gameState.cubeColorsArray[cubeValue]) {
                 Image(systemName: gameState.cubeColorsArray[cubeValue])
                     .foregroundColor(
@@ -87,6 +87,7 @@ struct CubeGridView: View {
                             }
                         }
                     }
+                    
                 }
             }
             // Displays text when user can no longer add to the grid

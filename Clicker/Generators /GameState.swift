@@ -14,6 +14,7 @@ class GameState : ObservableObject {
     @Published var waterCount = 0
     @Published var sunCount = 0
     @Published var grassCount = 0
+    @Published var buttonClickedNum = 0
     
     @Published var currentCube : CubeColor?
     @Published var cubeClicked = 0
@@ -25,11 +26,13 @@ class GameState : ObservableObject {
     @Published var upgradeSunComplete = false
     @Published var upgradeGrassComplete = false
 
+    @Published var flowersCollected = 0
     
     @Published var flowers = ["Flower1", "Flower2", "Flower3", "Flower4", "Flower5", "Flower6"]
     
     // Sees if game has been started before
     @Published var firstStartMessage = false
+    @Published var firstWaterMessage = false
     
     // Creates the cube upgrades with an arrays that initialized the values below
     @Published var cubeColors: [ CubeColor ] = [
@@ -47,6 +50,7 @@ class GameState : ObservableObject {
         if let randomIndex = BrownIndices.randomElement() {
             cubeColorsArray[randomIndex] = cubeColor.imageName
         }
+        buttonClickedNum += 1
         print(cubeColorsArray)
     }
     
@@ -117,9 +121,20 @@ class GameState : ObservableObject {
         }
     }
     
+    // Collect Flower
+    func collectFlower(cubeColor: CubeColor) {
+        cubeColorsArray.insert("", at: cubeClicked)
+        flowersCollected += 1
+    }
+    
+    
+    
     
     // Function to see if grid is full
     func isGridFull() -> Bool {
         return !cubeColorsArray.contains("")
     }
+    
+    
+    
 }
