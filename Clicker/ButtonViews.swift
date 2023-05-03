@@ -35,7 +35,7 @@ struct ButtonViews: View {
                             self.gameState.getWaterCube(cubeColor: self.gameState.cubeColors[1])
                             self.imageName = gameState.currentCube?.imageName ?? ""       //Changes the color of block selected to upgrade choosen
                             gameState.firstStartMessage = false
-                            print(gameState.currentCube?.imageName ?? "")
+                            //                            print(gameState.currentCube?.imageName ?? "")
                         }
                     }) {
                         ZStack {

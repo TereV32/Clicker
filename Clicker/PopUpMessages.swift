@@ -51,28 +51,20 @@ struct collectBarView: View {
     
     @ObservedObject var gameState : GameState
     
+    var resourceCount : Int
+    var numToUpgrade : Int
+    
     var body: some View {
         ZStack {
-            Capsule()
-                .fill(Color.gray)
-                .opacity(0.5)
-                .frame(width: 45, height: 10)
-            Capsule()
-                .fill(Color.white)
-                .frame(width: CGFloat(showBar())*4.5, height: 10)
+//            Capsule()
+//                .fill(Color.gray)
+//                .opacity(0.5)
+//                .frame(width: 45, height: 10)
+//            Capsule()
+//                .fill(Color.white)
+//                .frame(width: (barWidth)*4.5, height: 10)
+            Text("\(resourceCount) / \(numToUpgrade)")
         }
-    }
-    
-    func showBar() -> Int {
-        var upgradeValue = 0
-        if gameState.cubeColorsArray[gameState.cubeClicked] == "drop.fill" {
-            upgradeValue = gameState.waterCount
-        } else if gameState.cubeColorsArray[gameState.cubeClicked] == "sun.max.fill" {
-            upgradeValue = gameState.sunCount
-        }
-        print(gameState.cubeColorsArray[gameState.cubeClicked])
-        print(upgradeValue)
-        return upgradeValue
     }
 }
 
@@ -80,7 +72,7 @@ struct PopUpMessages_Previews: PreviewProvider {
     static var previews: some View {
         PopUpMessages()
         PopUpMessage2()
-        collectBarView(gameState: GameState())
+//        collectBarView(gameState: GameState())
     }
  }
  
