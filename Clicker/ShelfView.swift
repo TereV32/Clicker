@@ -10,7 +10,7 @@ import SwiftUI
 struct flowerView: View {
     
     @ObservedObject var gameState : GameState
-//    var number : Int
+    var number : Int
     
     var body: some View {
         ZStack {
@@ -18,11 +18,17 @@ struct flowerView: View {
                 .frame(width: 170, height: 170)
                 .cornerRadius(30)
             
-            //            Image(gameState.flowers[number])
-            Image(gameState.flowers.randomElement()!)
+            Image(gameState.flowers[number])
                 .resizable()
                 .cornerRadius(30)
                 .frame(width: 170, height: 170)
+            if !gameState.flowersUnlocked.contains(gameState.flowers[number]) {
+                Image(systemName: "lock.fill")
+                    .resizable()
+                    .opacity(0.75)
+                    .frame(width: 100, height: 125)
+                
+            }
         }
     }
 }
@@ -31,10 +37,6 @@ struct ShelfView: View {
     
     @ObservedObject var gameState : GameState
     
-//    private var data: [Int] = Array(1...6)
-    
-    // Set the image of flowers later
-//    @State private var flowers = ["Flower1", "Flower2", "Flower3"].shuffled()
     
     var body: some View {
         NavigationView {
@@ -48,9 +50,8 @@ struct ShelfView: View {
                         ForEach(0..<3, id: \.self) { row in
                             GridRow {
                                 ForEach(0..<2, id: \.self) { column in
-                                    //                                let cubeValue = row * 3 + column
-                                    //
-                                    flowerView(gameState: gameState)
+                                    let cubeValue = row * 2 + column
+                                    flowerView(gameState: gameState, number: cubeValue)
                                 }
                             }
                         }
